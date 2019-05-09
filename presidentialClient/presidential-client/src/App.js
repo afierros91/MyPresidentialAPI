@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import Home from './components/home';
-import Search from './components/search';
-import Navbar from './components/navbar';
+// import Search from './components/search';
+// import Navbar from './components/navbar';
 
 
 class App extends Component {
@@ -73,11 +73,11 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <Navbar />
+          {/* <Navbar /> */}
           <Switch>
             <Route exact path='/' render={() => <Home presidents={this.state.presidents}/>}></Route>
-            <Route exact path='/edit' render={() => <Edit presidents={this.state.presidents} addPresident={this.addPresident} update={this.update} delete={this.delete}/>}></Route>
-            <Route exact path='/search' render={() => <Search getByName={this.getByName} getByNumber={this.getByNumber} searchResult={this.state.searchResult}/>}></Route>
+            {/* <Route exact path='/edit' render={() => <Edit presidents={this.state.presidents} addPresident={this.addPresident} update={this.update} delete={this.delete}/>}></Route>
+            <Route exact path='/search' render={() => <Search getByName={this.getByName} getByNumber={this.getByNumber} searchResult={this.state.searchResult}/>}></Route> */}
           </Switch>
         </div>
       </div>

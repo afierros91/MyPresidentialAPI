@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
-import { Form } from 'react-bootstrap';
+// import { Form } from 'react-bootstrap';
 
 class Home extends Component {
     render() {
         return (
             <div class="container-fluid">
-                <div className="row center yellow">
+                <div id="hero-header" className="row">
                     <div className="jumbotron">
                         <h1>Presidential API</h1>
                         <p className="lead">Data on the Presidents of the USA</p>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-lg-3"></div>
-                </div>
-                <div className="col-lg-6 center">
+                <div id="description" className="col-lg-6 center">
                     <p>Lorem ipsum dolor sit amet</p>
                     <p><b>lorem ipsum dolor sit amet</b></p>
                     <p>lorem ipsum <b>:)</b>dolor sit amet</p>
                 </div>
                 <div className="row">
-                    <hr />
                     <div className="col-lg-8 col-md-8 col-sm-8">
                         <h1 className="center">Try it now!</h1>
                         <div className="input-group">
@@ -29,7 +25,11 @@ class Home extends Component {
                             <span className="input-group-btn">
                                 <button onClick="" className="btn btn-primary">request</button>
                             </span>
+                        </div>
+                        <div className="row">
                             <small>Hint, try: <a href="#">president/number</a><a href="#">president/name</a><a href="#">president/party</a></small>
+                        </div>
+                        <div className="row">
                             <p className="lead pad_top">Result:</p>
                             <div className="well">
                                 <pre className="pre-scrollable">
@@ -37,7 +37,6 @@ class Home extends Component {
                                 </pre>
                             </div>
                         </div>
-                        <div className="col-sm-2 col-lg-1 col-md-2"></div>
                     </div>
                 </div>
                 <div className="row pad_bot">
