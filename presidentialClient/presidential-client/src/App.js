@@ -7,6 +7,7 @@ import Home from './components/home';
 // import Navbar from './components/navbar';
 
 
+
 class App extends Component {
   state = {
     presidents: [],
