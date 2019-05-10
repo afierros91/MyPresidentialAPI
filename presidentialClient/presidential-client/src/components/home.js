@@ -8,7 +8,15 @@ class Home extends Component {
         result: [],
     }
 
-    componentDidMount()  {
+    // componentDidMount()  {
+    //     axios.get(`http://localhost:5000/presidents/${this.state.search}`)
+    //     .then(res => {
+    //         this.setState({
+    //           result: res.data
+    //         })
+    //     }) 
+    // }
+    getPresident()  {
         axios.get(`http://localhost:5000/presidents/${this.state.search}`)
         .then(res => {
             this.setState({
@@ -16,6 +24,7 @@ class Home extends Component {
             })
         }) 
     }
+
 
     render() {
         return (
@@ -39,7 +48,7 @@ class Home extends Component {
                             <input onChange={(e) => this.setState({ search: e.target.value })}
                             type="text" className="form-control" placeholder="presidents/1/" />
                             <span className="input-group-btn">
-                                <button onClick=""
+                                <button onClick={(e) => this.getPresident(e)}
                                  className="btn btn-primary">search presidents</button>
                             </span>
                         </div>
