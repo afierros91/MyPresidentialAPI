@@ -34,7 +34,7 @@ class Home extends Component {
                             <input type="text" className="form-control" placeholder="presidents/1/" />
                             <span className="input-group-btn">
                                 <button onClick={(e) => this.setState({ search: e.target.value })}
-                                 className="btn btn-primary">request</button>
+                                 className="btn btn-primary">search presidents</button>
                             </span>
                         </div>
                         <div className="row">
