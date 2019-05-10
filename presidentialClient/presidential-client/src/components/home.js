@@ -5,12 +5,17 @@ import axios from 'axios';
 class Home extends Component {
     state = {
         search: "",
-        presidents: [],
+        result: [],
     }
 
     componentDidMount()  {
         axios.get(`http://localhost:5000/presidents/${this.state.search}`)
-  }
+        .then(res => {
+            this.setState({
+              result: res.data
+            })
+        }) 
+    }
 
     render() {
         return (
@@ -23,14 +28,14 @@ class Home extends Component {
                 </div>
                 <div id="description" className="col-lg-6 center">
                     <p>Lorem ipsum dolor sit amet</p>
-                    <p><b>lorem ipsum dolor sit amet</b></p>
+                    <p><b>lorem ipsum bitch tits dolor sit amet</b></p>
                     <p>lorem ipsum <b>:)</b>dolor sit amet</p>
                 </div>
                 <div className="row">
                     <div className="col-lg-8 col-md-8 col-sm-8">
                         <h1 className="center">Try it now!</h1>
                         <div className="input-group">
-                            <span className="input-group-addon">localhost500</span>
+                            <span className="input-group-addon">localhost5000</span>
                             <input type="text" className="form-control" placeholder="presidents/1/" />
                             <span className="input-group-btn">
                                 <button onClick={(e) => this.setState({ search: e.target.value })}
@@ -44,7 +49,7 @@ class Home extends Component {
                             <p className="lead pad_top">Result:</p>
                             <div className="well">
                                 <pre className="pre-scrollable">
-                                    <p>{this.state.presidents}</p>
+                                    <p>{this.state.result.name}</p>
                                 </pre>
                             </div>
                         </div>
