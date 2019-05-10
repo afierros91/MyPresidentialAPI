@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { Form } from 'react-bootstrap';
+import  Highlight  from 'react-highlight';
+// import { For m } from 'react-bootstrap';
 
 class Home extends Component {
     state = {
@@ -16,13 +17,13 @@ class Home extends Component {
     //         })
     //     }) 
     // }
-    getPresident()  {
+    getPresident() {
         axios.get(`http://localhost:5000/presidents/${this.state.search}`)
-        .then(res => {
-            this.setState({
-              result: res.data
+            .then(res => {
+                this.setState({
+                    result: res.data
+                })
             })
-        }) 
     }
 
 
@@ -46,10 +47,10 @@ class Home extends Component {
                         <div className="input-group">
                             <span className="input-group-addon">localhost5000</span>
                             <input onChange={(e) => this.setState({ search: e.target.value })}
-                            type="text" className="form-control" placeholder="presidents/1/" />
+                                type="text" className="form-control" placeholder="presidents/1/" />
                             <span className="input-group-btn">
                                 <button onClick={(e) => this.getPresident(e)}
-                                 className="btn btn-primary">search presidents</button>
+                                    className="btn btn-primary">search presidents</button>
                             </span>
                         </div>
                         <div className="row">
@@ -58,9 +59,11 @@ class Home extends Component {
                         <div className="row">
                             <p className="lead pad_top">Result:</p>
                             <div className="well">
-                                <pre className="pre-scrollable">
-                                    <p>{this.state.result.name}</p>
-                                </pre>
+                                    <pre className="pre-scrollable">
+                                    <Highlight className='javascript'>
+                                        <p>{this.state.result.name}</p>
+                                     </Highlight> 
+                                    </pre>
                             </div>
                         </div>
                     </div>
