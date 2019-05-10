@@ -61,17 +61,15 @@ class Home extends Component {
                             <p className="lead pad_top">Result:</p>
                             <div className="well">
                                 <pre className="pre-scrollable">
-                                    {/* <Highlight className='javascript'> */}
-                                        <p>President {this.state.result.number} of the United States of America</p>
-                                        <p>{this.state.result.name} ({this.state.result.born} - {this.state.result.died})</p>
-                                        <p>In Office {this.state.result.start} - {this.state.result.end}</p>
-                                        <p>Number of terms served: {this.state.result.terms}</p>
-                                        <p>{this.state.result.party}</p>
-                                        <p>Vice President: {this.state.result.vice}</p>
-                                        <p>Prior profession: {this.state.result.prior}</p>
-                                        <p>From {this.state.result.home}, {this.state.result.state}</p>
-                                        <p>Married to {this.state.result.spouse}</p>
-                                    {/* </Highlight> */}
+                                    <p><b>President {this.state.result.number} of the United States of America</b></p>
+                                    <p><b>{this.state.result.name}</b><i> ({this.state.result.born} - {this.state.result.died})</i></p>
+                                    <p><b>In Office:</b> <i>{this.state.result.start} - {this.state.result.end}</i></p>
+                                    <p><b>Number of terms served:</b> <i>{this.state.result.terms}</i></p>
+                                    <p><b>Party:</b><i>{this.state.result.party}</i></p>
+                                    <p><b>Vice President:</b> <i>{this.state.result.vice}</i></p>
+                                    <p><b>Prior profession:</b><i> {this.state.result.prior}</i></p>
+                                    <p><b>From:</b> <i>{this.state.result.home}, {this.state.result.state}</i></p>
+                                    <p><b>Married to:</b><i> {this.state.result.spouse}</i></p>
                                 </pre>
                             </div>
                         </div>
