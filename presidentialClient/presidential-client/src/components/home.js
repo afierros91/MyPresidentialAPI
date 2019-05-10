@@ -36,9 +36,10 @@ class Home extends Component {
                     </div>
                 </div>
                 <div id="description" className="col-lg-6 center">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p><b>lorem ipsum four twentius dolor sit amet</b></p>
+                    <p>Search Presidents with different API calls</p>
+                    <p><b>Search by name, number in the presidency, etc.</b></p>
                     <p>lorem ipsum <b>:)</b>dolor sit amet</p>
+                    <img src={this.state.result.portrait} alt=""/>
                 </div>
                 <div className="row">
                     <div className="col-lg-8 col-md-8 col-sm-8">
@@ -59,7 +60,15 @@ class Home extends Component {
                             <p className="lead pad_top">Result:</p>
                             <div className="well">
                                 <pre className="pre-scrollable">
-                                    <p>{this.state.result.name}</p>
+                                    <p>President {this.state.result.number} of the United States of America</p>
+                                    <p>{this.state.result.name} ({this.state.result.born} - {this.state.result.died})</p>
+                                    <p>In Office {this.state.result.start} - {this.state.result.end}</p>
+                                    <p>Number of terms served: {this.state.result.terms}</p>
+                                    <p>{this.state.result.party}</p>
+                                    <p>Vice President: {this.state.result.vice}</p>
+                                    <p>Prior profession: {this.state.result.prior}</p>
+                                    <p>From {this.state.result.home}, {this.state.result.state}</p>
+                                    <p>Married to {this.state.result.spouse}</p>
                                 </pre>
                             </div>
                         </div>
