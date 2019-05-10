@@ -1,7 +1,15 @@
-#hero-header {
+.jumbotron {
     justify-content: center;
+    background-image: url("https://wurcf.org/wp-content/uploads/2015/11/USA-Flag-West-U-Rotary-1024x1024.jpg");
+    background-size: cover;
 }
 
 #description {
     justify-content: center;
 }
+
+#presidential-portrait {
+    height: 430px;
+    width: 320px;
+}
+
