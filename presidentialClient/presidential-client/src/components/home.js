@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 // import { Form } from 'react-bootstrap';
 
 class Home extends Component {
+    state = {
+        search: "",
+        presidents: [],
+    }
+
+    componentDidMount()  {
+        axios.get(`http://localhost:5000/presidents/${this.state.search}`)
+  }
+
     render() {
         return (
-            <div class="container-fluid">
+            <div className="container-fluid">
                 <div id="hero-header" className="row">
                     <div className="jumbotron">
                         <h1>Presidential API</h1>
@@ -23,7 +33,8 @@ class Home extends Component {
                             <span className="input-group-addon">localhost500</span>
                             <input type="text" className="form-control" placeholder="presidents/1/" />
                             <span className="input-group-btn">
-                                <button onClick="" className="btn btn-primary">request</button>
+                                <button onClick={(e) => this.setState({ search: e.target.value })}
+                                 className="btn btn-primary">search presidents</button>
                             </span>
                         </div>
                         <div className="row">
@@ -33,7 +44,7 @@ class Home extends Component {
                             <p className="lead pad_top">Result:</p>
                             <div className="well">
                                 <pre className="pre-scrollable">
-                                    pres data here
+                                    <p>{this.state.presidents}</p>
                                 </pre>
                             </div>
                         </div>
