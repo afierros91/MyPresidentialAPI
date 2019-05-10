@@ -44,7 +44,7 @@ class Home extends Component {
                 </div>
                 <div className="row">
                     <div className="col-lg-8 col-md-8 col-sm-8">
-                        <h1 className="center">Make an API call!</h1>
+                        <h1 className="center" id="API">Make an API call!</h1>
                         <div className="input-group">
                             <span className="input-group-addon">http://localhost:5000/presidents/</span>
                             <input onChange={(e) => this.setState({ search: e.target.value })}
@@ -60,12 +60,12 @@ class Home extends Component {
                         <div className="row">
                             <p className="lead pad_top">Result:</p>
                             <div className="well">
-                                <pre className="pre-scrollable">
-                                    <p><b>President {this.state.result.number} of the United States of America</b></p>
+                                <pre className="pre-scrollable" id="scrollBox">
+                                    <p><b><i>President {this.state.result.number} of the United States of America</i></b></p>
                                     <p><b>{this.state.result.name}</b><i> ({this.state.result.born} - {this.state.result.died})</i></p>
                                     <p><b>In Office:</b> <i>{this.state.result.start} - {this.state.result.end}</i></p>
                                     <p><b>Number of terms served:</b> <i>{this.state.result.terms}</i></p>
-                                    <p><b>Party:</b><i>{this.state.result.party}</i></p>
+                                    <p><b>Party:</b><i> {this.state.result.party}</i></p>
                                     <p><b>Vice President:</b> <i>{this.state.result.vice}</i></p>
                                     <p><b>Prior profession:</b><i> {this.state.result.prior}</i></p>
                                     <p><b>From:</b> <i>{this.state.result.home}, {this.state.result.state}</i></p>

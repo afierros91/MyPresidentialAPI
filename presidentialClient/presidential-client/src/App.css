@@ -2,14 +2,33 @@
     justify-content: center;
     background-image: url("https://wurcf.org/wp-content/uploads/2015/11/USA-Flag-West-U-Rotary-1024x1024.jpg");
     background-size: cover;
+    text-align: center;
+    margin: auto;
 }
 
+
 #description {
-    justify-content: center;
+    margin: 570px;
+    margin-top: 40px;
 }
 
 #presidential-portrait {
-    height: 430px;
-    width: 320px;
+    margin-top: 50px;
+    height: 435px;
+    width: 300px;
+    float: left;
+    
 }
+#scrollBox{
+    margin-inline-start: 500px;
+}
+#API{
+    margin: 50px;
+    margin-inline-start: 550px;
+}
+.input-group-addon{
+    margin:2;
+    margin-inline-start: 200px;
+}
+
 
