@@ -28,7 +28,7 @@ class Home extends Component {
                 </div>
                 <div id="description" className="col-lg-6 center">
                     <p>Lorem ipsum dolor sit amet</p>
-                    <p><b>lorem ipsum bitch tits dolor sit amet</b></p>
+                    <p><b>lorem ipsum four twentius dolor sit amet</b></p>
                     <p>lorem ipsum <b>:)</b>dolor sit amet</p>
                 </div>
                 <div className="row">
@@ -36,9 +36,10 @@ class Home extends Component {
                         <h1 className="center">Try it now!</h1>
                         <div className="input-group">
                             <span className="input-group-addon">localhost5000</span>
-                            <input type="text" className="form-control" placeholder="presidents/1/" />
+                            <input onChange={(e) => this.setState({ search: e.target.value })}
+                            type="text" className="form-control" placeholder="presidents/1/" />
                             <span className="input-group-btn">
-                                <button onClick={(e) => this.setState({ search: e.target.value })}
+                                <button onClick=""
                                  className="btn btn-primary">search presidents</button>
                             </span>
                         </div>
