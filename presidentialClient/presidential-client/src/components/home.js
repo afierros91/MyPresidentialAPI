@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import  Highlight  from 'react-highlight';
+import Highlight from 'react-highlight';
 // import { For m } from 'react-bootstrap';
 
 class Home extends Component {
@@ -37,23 +37,29 @@ class Home extends Component {
                     </div>
                 </div>
                 <div id="description" className="col-lg-6 center">
+                    <i>
                     <p>Search Presidents with different API calls</p>
                     <p><b>Search by name, number in the presidency, etc.</b></p>
                     <p>lorem ipsum <b>:)</b>dolor sit amet</p>
-                    <img id="presidential-portrait" src={this.state.result.portrait} className="rounded-circle mx-auto d-block" alt=""/>
+                    </i>
+                    <img id="presidential-portrait" src={this.state.result.portrait} className="rounded-circle mx-auto d-block" alt="" />
                 </div>
-                <div className="row">
-                    <div className="col-lg-8 col-md-8 col-sm-8">
-                        <h1 className="center" id="API">Make an API call!</h1>
-                        <div className="input-group">
-                            <span className="input-group-addon">http://localhost:5000/presidents/</span>
-                            <input onChange={(e) => this.setState({ search: e.target.value })}
-                                type="text" className="form-control" placeholder="number/1/" />
-                            <span className="input-group-btn">
-                                <button onClick={(e) => this.getPresident(e)}
-                                    className="btn btn-primary">search presidents</button>
-                            </span>
+                <div className="api-container">
+                    <div className="api-content">
+                        <h1 id="api-header">Make an API call!</h1>
+
+                        <div className="api-search">
+                            <div className="input-group">
+                                <span className="input-group-addon">http://localhost:5000/presidents/</span>
+                                <input id="search" onChange={(e) => this.setState({ search: e.target.value })}
+                                    type="text" className="form-control" placeholder="number/1/" />
+                                <span className="input-group-btn">
+                                    <button onClick={(e) => this.getPresident(e)}
+                                        className="btn btn-primary">search presidents</button>
+                                </span>
+                            </div>
                         </div>
+
                         <div className="row">
                             <small>Try these calls: <a href="#">number/1</a>, <a href="#">name/George%20Washington</a>, <a href="#">420/blazeit</a></small>
                         </div>
@@ -89,7 +95,7 @@ class Home extends Component {
                     </div>
                     <div className="col-sm-3 col-lg-3 col-md-3">
                         <h4 className="center">what is this</h4>
-                        <p>hello world</p>
+                        <p>hello world alllah akbar</p>
                         <p>goodbye world</p>
                     </div>
                     <div className="col-sm-1 col-lg-1 col-md-1"></div>

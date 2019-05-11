@@ -8,27 +8,42 @@
 
 
 #description {
-    margin: 570px;
+    margin: 470px;
     margin-top: 40px;
+    text-align: center;
 }
 
 #presidential-portrait {
     margin-top: 50px;
     height: 435px;
     width: 300px;
-    float: left;
+    float: center;
     
 }
-#scrollBox{
-    margin-inline-start: 500px;
+#scrollBox {
+   
+    float: center;
 }
 #API{
-    margin: 50px;
-    margin-inline-start: 550px;
+justify-content: center;
+ 
 }
 .input-group-addon{
     margin:2;
     margin-inline-start: 200px;
 }
+#search{
+    margin-inline-start: 200px;
+}
 
+.api-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.api-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
