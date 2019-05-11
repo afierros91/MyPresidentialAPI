@@ -4,6 +4,7 @@ import axios from 'axios';
 import './App.css';
 import Home from './components/home';
 import Navbar from './components/navbar';
+import About from './components/about';
 
 
 
@@ -76,7 +77,7 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path='/' render={() => <Home presidents={this.state.presidents}/>}></Route>
-            {/* <Route exact path='/edit' render={() => <Edit presidents={this.state.presidents} addPresident={this.addPresident} update={this.update} delete={this.delete}/>}></Route> */}
+            <Route exact path='/about' render={() => <About/>}></Route>
           </Switch>
         </div>
       </div>

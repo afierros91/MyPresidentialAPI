@@ -6,10 +6,14 @@ class Navbar extends Component {
         return(
             <div className="container row">
                 <div className="col-md-4">
-                
+                    <Link to="/">
+                        <h3>Home</h3>
+                    </Link>
                 </div>
                 <div className="col-md-4">
-                
+                    <Link to="/about">
+                        <h3>About</h3>
+                    </Link>
                 </div>
                 <div className="col-md-4">
                 
