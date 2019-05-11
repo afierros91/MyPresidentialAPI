@@ -17,36 +17,52 @@ class Home extends Component {
             })
     }
 
+    presPortrait() {
+        if(this.state.result != "") {
+            return(<div className="row">
+            <img id="presidential-portrait" src={this.state.result.portrait} className="rounded-circle mx-auto d-block" alt="" />
+            </div>);
+        }
+    }
+
     render() {
         return (
             <div className="container-fluid">
+
                 <div className="row">
                     <div className="jumbotron">
                         <h1>Presidential API</h1>
                         <p className="lead">Data on the Presidents of the USA</p>
                     </div>
                 </div>
-                <div id="description" className="col-lg-6 center">
+
+                <div id="description" className="row">
                     <i>
                         <p>Search Presidents with different API calls</p>
                         <p><b>Search by name, number in the presidency, etc.</b></p>
                         <p>lorem ipsum <b>:)</b>dolor sit amet</p>
                         documentaion-component
                     </i>
-                    <img id="presidential-portrait" src={this.state.result.portrait} className="rounded-circle mx-auto d-block" alt="" />
                 </div>
+
+                {/* <div className="row">
+                <img id="presidential-portrait" src={this.state.result.portrait} className="rounded-circle mx-auto d-block" alt="" />
+                </div> */}
+                {this.presPortrait()}
+
                 <div className="api-container">
                     <div className="api-content">
-                        <img id="presidential-portrait" src={this.state.result.portrait} className="rounded-circle mx-auto d-block" alt="" />
                     </div>
                     <div className="api-search-container">
                         <h1>Make an API Call!</h1>
+
                         <div className="input-form">
                             <span>http://localhost:5000/presidents/</span>
                             <input type="text" placeholder="number/1/"
                                 onChange={(e) => this.setState({ search: e.target.value })} />
-                            <button>Search</button>
+                            <button onClick={(e) => this.getPresident(e)}>Search</button>
                         </div>
+
                         <div className="sample">
                             <small>Try these calls: <a href="#">number/1</a>, <a href="#">name/George/Washington</a>, <a href="#">420/blazeit</a></small>
                         </div>
@@ -61,10 +77,11 @@ class Home extends Component {
                             <p><b>Prior profession:</b><i> {this.state.result.prior}</i></p>
                             <p><b>From:</b> <i>{this.state.result.home}, {this.state.result.state}</i></p>
                             <p><b>Married to:</b><i> {this.state.result.spouse}</i></p>
-
                         </div>
+
                     </div>
                 </div>
+
                 <div className="row">
                         <div className="col-sm-1 col-lg-1 col-md-1"></div>
                         <div className="col-sm-3 col-lg-3 col-md-3">
@@ -84,6 +101,7 @@ class Home extends Component {
                         </div>
                         <div className="col-sm-1 col-lg-1 col-md-1"></div>
                     </div>
+                    
             </div>
         )
     }
