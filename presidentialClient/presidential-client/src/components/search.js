@@ -71,13 +71,14 @@ class Search extends Component {
     render() {
         return(
             <div className="container">
-                <form type="search" action="">
-                    <input type="text" 
-                    onChange={(e) => this.setState({
-                        search: e.target.value
-                    })}
-                    />
+                <form action="">
+                    <div className="form-group">
+                        <label htmlFor="">Filter Presidents</label>
+                        <input type="search" onChange={(e) => this.setState({search: e.target.value})}/>
+                        <small className="form-text text muted">search with formats</small>
+                    </div>
                 </form>
+
                 <DropdownButton id="dropdown-basic-button" title="Get By">
                     <Dropdown.Item href={this.getByName(this.state.search)}>Name</Dropdown.Item>
                     <Dropdown.Item href={this.getByNumber(this.state.search)}>Number</Dropdown.Item>
