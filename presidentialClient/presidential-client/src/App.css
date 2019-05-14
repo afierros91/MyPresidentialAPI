@@ -1,9 +1,10 @@
 .jumbotron {
     justify-content: center;
-    background-image: url("https://wurcf.org/wp-content/uploads/2015/11/USA-Flag-West-U-Rotary-1024x1024.jpg");
+    background-image: url("https://cdn2.oceansbridge.com/2017/08/11072032/The-Republican-Court-In-The-Days-Of-Lincoln-1867-Peter-Frederick-Rothermel-oil-painting-1.jpg");
     background-size: cover;
     text-align: center;
     margin: auto;
+    color: ivory;
 }
 
 
@@ -42,6 +43,7 @@ justify-content: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .api-search-container {
@@ -49,8 +51,9 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #252525;
+    background-color: #D6CCA9;
     color: white;
+
 }
 
 .input-form {
@@ -91,7 +94,7 @@ justify-content: center;
     height: 400px;
     margin: 20px 0;
     width: 600px;
-    background-color: #F5F5DC;
+    background-color: #EEEADC;
     color: #252525;
 }
 
@@ -121,4 +124,12 @@ justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h1 {
+    font-family: 'Playfair Display SC', serif;
+}
+
+p {
+    font-family: 'Catamaran', sans-serif;
 }

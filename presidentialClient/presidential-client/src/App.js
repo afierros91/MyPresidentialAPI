@@ -5,13 +5,13 @@ import './App.css';
 import Home from './components/home';
 import Navbar from './components/navbar';
 import About from './components/about';
+import Search from './components/search';
 
 
 
 class App extends Component {
   state = {
     presidents: [],
-    searchResult: {}
   }
 
   componentWillMount() {
@@ -28,47 +28,65 @@ class App extends Component {
       })
   }
 
-  // getByName= (name) => {
-  //   axios.get(`http://localhost:5000/presidents/name/${name}`)
-  //     .then(res =>{
-  //       console.log(res);
-  //       this.setState({
-  //         searchResult: res.data
-  //       })
-  //     })
-  // }
+  getByName= (name) => {
+    axios.get(`http://localhost:5000/presidents/name/${name}`)
+      .then(res =>{
+        console.log(res);
+        this.setState({
+          searchResult: res.data
+        })
+      })
+  }
 
-  // getByNumber= (number) => {
-  //   axios.get(`http://localhost:5000/presidents/name/${number}`)
-  //     .then(res =>{
-  //       console.log(res);
-  //       this.setState({
-  //         searchResult: res.data
-  //       })
-  //     })
-  // }
+  getByNumber= (number) => {
+    axios.get(`http://localhost:5000/presidents/number/${number}`)
+      .then(res =>{
+        console.log(res);
+        this.setState({
+          searchResult: res.data
+        })
+      })
+  }
 
-  // addPresident = (president) => {
-  //   console.log('trying to post')
-  //   axios.post('http://localhost:5000/presidents', president)
-  //     .then(res => {
-  //       console.log(res);
-  //     })
-  // }
+  getByParty= (party) => {
+    axios.get(`http://localhost:5000/presidents/party/${party}`)
+      .then(res =>{
+        console.log(res);
+        this.setState({
+          searchResult: res.data
+        })
+      })
+  }
 
-  // update = (president, number) => {
-  //   axios.put(`http://localhost:5000/presidents/${number}`, president)
-  //     .then(res =>{
-  //       console.log(res);
-  //     })
-  // }
+  getByTerms= (term) => {
+    axios.get(`http://localhost:5000/presidents/term/${term}`)
+      .then(res =>{
+        console.log(res);
+        this.setState({
+          searchResult: res.data
+        })
+      })
+  }
 
-  // delete = (presidents) => {
-  //   axios.delete(`http://localhost:5000/presidents/${presidents}`)
-  //     .then(res =>{
-  //       console.log(res);
-  //     })
-  // }
+  getByState= (state) => {
+    axios.get(`http://localhost:5000/presidents/state/${state}`)
+      .then(res =>{
+        console.log(res);
+        this.setState({
+          searchResult: res.data
+        })
+      })
+  }
+
+  getByDeath= (death) => {
+    axios.get(`http://localhost:5000/presidents/death/${death}`)
+      .then(res =>{
+        console.log(res);
+        this.setState({
+          searchResult: res.data
+        })
+      })
+  }
 
   render() {
     return (
@@ -76,8 +94,18 @@ class App extends Component {
         <div>
           <Navbar />
           <Switch>
-            <Route exact path='/' render={() => <Home presidents={this.state.presidents}/>}></Route>
+            <Route exact path='/' render={() => <Home/>}></Route>
             <Route exact path='/about' render={() => <About/>}></Route>
+            <Route exact path='/search' render={() => <Search 
+            presidents={this.state.presidents}
+            searchResult={this.state.searchResult}
+            // getByName={this.getByName}
+            // getByNumber={this.getByNumber}
+            // getByParty={this.getByParty}
+            // getByTerms={this.getByTerms}
+            // getByState={this.getByState}
+            // getByDeath={this.getByDeath}
+            />}></Route>
           </Switch>
         </div>
       </div>
