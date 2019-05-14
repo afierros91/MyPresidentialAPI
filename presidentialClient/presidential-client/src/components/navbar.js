@@ -16,7 +16,9 @@ class Navbar extends Component {
                     </Link>
                 </div>
                 <div className="col-md-4">
-                
+                    <Link to="/search">
+                        <h3>Search</h3>
+                    </Link>
                 </div>
             </div>
         )

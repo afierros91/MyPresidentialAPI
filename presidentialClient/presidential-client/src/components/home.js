@@ -7,8 +7,10 @@ class Home extends Component {
         result: [],
     }
 
+    mySearch = this.state.search.toLowerCase();
+
     getPresident() {
-        axios.get(`http://localhost:5000/presidents/${this.state.search}`)
+        axios.get(`http://localhost:5000/presidents/${this.mySearch}`)
             .then(res => {
                 this.setState({
                     result: res.data
