@@ -12,7 +12,6 @@ import Search from './components/search';
 class App extends Component {
   state = {
     presidents: [],
-    searchResult: [],
   }
 
   componentWillMount() {
@@ -100,12 +99,12 @@ class App extends Component {
             <Route exact path='/search' render={() => <Search 
             presidents={this.state.presidents}
             searchResult={this.state.searchResult}
-            getByName={this.getByName}
-            getByNumber={this.getByNumber}
-            getByParty={this.getByParty}
-            getByTerms={this.getByTerms}
-            getByState={this.getByState}
-            getByDeath={this.getByDeath}
+            // getByName={this.getByName}
+            // getByNumber={this.getByNumber}
+            // getByParty={this.getByParty}
+            // getByTerms={this.getByTerms}
+            // getByState={this.getByState}
+            // getByDeath={this.getByDeath}
             />}></Route>
           </Switch>
         </div>

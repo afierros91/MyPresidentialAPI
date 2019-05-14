@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
+import axios from 'axios';
 
 class Search extends Component {
     state = {
@@ -7,7 +8,66 @@ class Search extends Component {
         results: [],
     }
 
+    getByName= (name) => {
+        axios.get(`http://localhost:5000/presidents/name/${name}`)
+          .then(res =>{
+            console.log(res);
+            this.setState({
+              results: res.data
+            })
+          })
+      }
     
+      getByNumber= (number) => {
+        axios.get(`http://localhost:5000/presidents/number/${number}`)
+          .then(res =>{
+            console.log(res);
+            this.setState({
+              results: res.data
+            })
+          })
+      }
+    
+      getByParty= (party) => {
+        axios.get(`http://localhost:5000/presidents/party/${party}`)
+          .then(res =>{
+            console.log(res);
+            this.setState({
+              results: res.data
+            })
+          })
+      }
+    
+      getByTerms= (term) => {
+        axios.get(`http://localhost:5000/presidents/term/${term}`)
+          .then(res =>{
+            console.log(res);
+            this.setState({
+              results: res.data
+            })
+          })
+      }
+    
+      getByState= (state) => {
+        axios.get(`http://localhost:5000/presidents/state/${state}`)
+          .then(res =>{
+            console.log(res);
+            this.setState({
+              results: res.data
+            })
+          })
+      }
+    
+      getByDeath= (death) => {
+        axios.get(`http://localhost:5000/presidents/death/${death}`)
+          .then(res =>{
+            console.log(res);
+            this.setState({
+              results: res.data
+            })
+          })
+      }
+
     render() {
         return(
             <div className="container">
@@ -19,16 +79,16 @@ class Search extends Component {
                     />
                 </form>
                 <DropdownButton id="dropdown-basic-button" title="Get By">
-                    <Dropdown.Item href={this.props.getByName(this.state.search)}>Name</Dropdown.Item>
-                    <Dropdown.Item href={this.props.getByNumber(this.state.search)}>Number</Dropdown.Item>
-                    <Dropdown.Item href={this.props.getByParty(this.state.search)}>Party</Dropdown.Item>
-                    <Dropdown.Item href={this.props.getByTerms(this.state.search)}>Term</Dropdown.Item>
-                    <Dropdown.Item href={this.props.getByState(this.state.search)}>State</Dropdown.Item>
-                    <Dropdown.Item href={this.props.getByDeath(this.state.search)}>Death</Dropdown.Item>
+                    <Dropdown.Item href={this.getByName(this.state.search)}>Name</Dropdown.Item>
+                    <Dropdown.Item href={this.getByNumber(this.state.search)}>Number</Dropdown.Item>
+                    <Dropdown.Item href={this.getByParty(this.state.search)}>Party</Dropdown.Item>
+                    <Dropdown.Item href={this.getByTerms(this.state.search)}>Term</Dropdown.Item>
+                    <Dropdown.Item href={this.getByState(this.state.search)}>State</Dropdown.Item>
+                    <Dropdown.Item href={this.getByDeath(this.state.search)}>Death</Dropdown.Item>
                 </DropdownButton>
                 <div>
                     {
-                        this.props.searchResult.map((president, i) => {
+                        this.state.results.map((president, i) => {
                         return (
                         <li key={i}>{president.name}</li>
                         )
