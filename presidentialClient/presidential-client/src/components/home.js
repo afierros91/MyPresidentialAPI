@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Highlight from 'react-highlight';
 
 class Home extends Component {
     state = {
@@ -39,9 +38,7 @@ class Home extends Component {
                 <div id="description" className="row">
                     <i>
                         <p>Search Presidents with different API calls</p>
-                        <p><b>Search by name, number in the presidency, etc.</b></p>
-                        <p>lorem ipsum <b>:)</b>dolor sit amet</p>
-                        documentaion-component
+                        <p><b>Search by name or by number in the presidency</b></p>
                     </i>
                 </div>
 
@@ -54,7 +51,7 @@ class Home extends Component {
                     <div className="api-content">
                     </div>
                     <div className="api-search-container">
-                        <h1>Make an API Call!</h1>
+                        <h1>Try an API Call</h1>
 
                         <div className="input-form">
                             <span>http://localhost:5000/presidents/</span>
@@ -64,7 +61,7 @@ class Home extends Component {
                         </div>
 
                         <div className="sample">
-                            <small>Try these calls: <a href="#">number/1</a>, <a href="#">name/George/Washington</a>, <a href="#">420/blazeit</a></small>
+                            <small>Try these formats: <a href="#">number/1</a>, <a href="#">name/George%20Washington</a> </small>
                         </div>
 
                         <div className="code-result">
@@ -85,14 +82,14 @@ class Home extends Component {
                 <div className="row">
                         <div className="col-sm-1 col-lg-1 col-md-1"></div>
                         <div className="col-sm-3 col-lg-3 col-md-3">
-                            <h4 className="center">what is this</h4>
-                            <p>hello world</p>
-                            <p>goodbye world</p>
+                            <h4 className="center">What this is:</h4>
+                            <p>Presidential API is a free to use database with information on the Presidents of the USA.</p>
+                            <p>This is a work in progress. Please contact us for any errors in our data or any suggestions for additional data we should include on the Presidents.</p>
                         </div>
                         <div className="col-sm-3 col-lg-3 col-md-3">
-                            <h4 className="center">what is this</h4>
-                            <p>hello world</p>
-                            <p>goodbye world</p>
+                            <h4 className="center">How to make a call:</h4>
+                            <p>Listen in on this port: </p>
+                            <p>And then get a computer science doctorate</p>
                         </div>
                         <div className="col-sm-3 col-lg-3 col-md-3">
                             <h4 className="center">what is this</h4>
