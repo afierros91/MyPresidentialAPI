@@ -7,11 +7,17 @@ class Home extends Component {
         result: [],
     }
 
-    // mySearch = this.state.search.toLowerCase();
+convert(){
+    let search = this.state.search;
+    let res = search.toLowerCase();
+   
 
-    getPresident() {
-        axios.get(`http://localhost:5000/presidents/${this.state.search}`) //mySearch
-            .then(res => {
+}
+  
+
+    getPresident(res) {
+        axios.get(`http://localhost:5000/presidents/${this.state.search}`)
+          .then(res => {
                 this.setState({
                     result: res.data
                 })
@@ -57,9 +63,9 @@ class Home extends Component {
 
                         <div className="input-form">
                             <span>http://localhost:5000/presidents/</span>
-                            <input type="text" placeholder="number/1/"
+                            <input type="text"  placeholder="number/1/"
                                 onChange={(e) => this.setState({ search: e.target.value })} />
-                            <button onClick={(e) => this.getPresident(e)}>Search</button>
+                            <button onClick={(e) => { this.getPresident(e); this.convert(e);}} >Search</button>
                         </div>
 
                         <div className="sample">
