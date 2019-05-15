@@ -38,8 +38,8 @@ class Search extends Component {
           })
       }
     
-      getByTerms= (term) => {
-        axios.get(`http://localhost:5000/presidents/term/${term}`)
+      getByTerms= (terms) => {
+        axios.get(`http://localhost:5000/presidents/terms/${terms}`)
           .then(res =>{
             console.log(res);
             this.setState({
@@ -68,6 +68,27 @@ class Search extends Component {
           })
       }
 
+      myPresidents = this.state.results.map((president, i) => {
+          return (
+              <li key={i}>{president.name}</li>
+          )
+      })
+
+      filterPres() {
+          if(this.state.results != []) {
+              return(
+                //   <div className="row">
+                //     <ul>{this.myPresidents}</ul>
+                //   </div>
+                this.state.results.map((president, i) => {
+                    return (
+                        <li key={i}>{president.name}</li>
+                    )
+                })
+              )
+          }
+      }
+
     render() {
         return(
             <div className="container">
@@ -80,21 +101,24 @@ class Search extends Component {
                 </form>
 
                 <DropdownButton id="dropdown-basic-button" title="Get By">
-                    <Dropdown.Item href={this.getByName(this.state.search)}>Name</Dropdown.Item>
-                    <Dropdown.Item href={this.getByNumber(this.state.search)}>Number</Dropdown.Item>
-                    <Dropdown.Item href={this.getByParty(this.state.search)}>Party</Dropdown.Item>
+                    {/* <Dropdown.Item href={this.getByName(this.state.search)}>Name</Dropdown.Item> */}
+                    <Dropdown.Item onClick={(e) => this.getByNumber(this.state.search)}>Number</Dropdown.Item>
+                    {/* <Dropdown.Item href={this.getByParty(this.state.search)}>Party</Dropdown.Item>
                     <Dropdown.Item href={this.getByTerms(this.state.search)}>Term</Dropdown.Item>
                     <Dropdown.Item href={this.getByState(this.state.search)}>State</Dropdown.Item>
-                    <Dropdown.Item href={this.getByDeath(this.state.search)}>Death</Dropdown.Item>
+                    <Dropdown.Item href={this.getByDeath(this.state.search)}>Death</Dropdown.Item> */}
                 </DropdownButton>
                 <div>
-                    {
+                    {/* {
                         this.state.results.map((president, i) => {
                         return (
                         <li key={i}>{president.name}</li>
                         )
                     })
-                    }
+                    } */}
+                    {this.myPresidents}
+                    {this.filterPres()}
+                    <p>Hello {this.state.results.name}</p>
                 </div>
             </div>
         )

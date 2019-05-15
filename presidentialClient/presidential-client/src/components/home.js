@@ -87,7 +87,7 @@ convert(){
                     </div>
                 </div>
 
-                <div className="row">
+                <div id="info-container" className="row">
                         <div className="col-sm-1 col-lg-1 col-md-1"></div>
                         <div className="col-sm-3 col-lg-3 col-md-3">
                             <h4 className="center">What this is:</h4>
