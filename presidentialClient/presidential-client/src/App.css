@@ -23,21 +23,37 @@
     
 }
 #scrollBox {
-   
     float: center;
 }
+
 #API{
 justify-content: center;
  
 }
+
+#info-container {
+    background: #343331;
+    color: #eeedeb;
+}
+
 .input-group-addon{
     margin:2;
     margin-inline-start: 200px;
 }
+
 #search{
     margin-inline-start: 200px;
 }
 
+#nav-container {
+    background: #2c2b2a;
+    font-family: 'Playfair Display SC', serif;
+}
+
+a {
+    color: #eeedeb;
+
+}
 
 .api-container {
     display: flex;
@@ -128,6 +144,10 @@ justify-content: center;
 
 h1 {
     font-family: 'Playfair Display SC', serif;
+}
+
+h4 {
+    font-family: 'Catamaran', sans-serif;
 }
 
 p {
