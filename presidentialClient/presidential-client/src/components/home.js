@@ -7,17 +7,26 @@ class Home extends Component {
         result: [],
     }
 
-// convert(){
-//     let data = this.getPresident();
-//     let newSearch = this.state.search; {
-//     if(this.state.result != this.getPresident(data)) {
-//     return newSearch.toLowerCase(newSearch);
-//         }
-//     else console.log("hello");
-//     }
+convert(){
+    
+    let B = this.state.search; {
+    if(this.state.search = "") {
+    return B.toLowerCase();
+        }
+    else console.log(B);
+    }
 
-// }
-  
+// // }
+// convert=()=>{
+ 
+//     var A = this.state.search;
+ 
+//     var B = A.toLowerCase() ;
+//     console.log(B);
+// //    return B
+
+   
+}
 
     getPresident() {
         axios.get(`http://localhost:5000/presidents/${this.state.search}`)
@@ -69,7 +78,7 @@ class Home extends Component {
                             <span>http://localhost:5000/presidents/</span>
                             <input type="text"  placeholder="number/1/"
                                 onChange={(e) => this.setState({ search: e.target.value })} />
-                            <button onClick={(e) =>  this.getPresident(e)} >Search</button>
+                                <button onClick={(e) => { this.convert(e); this.getPresident(e);}} >Search</button>
                         </div>
 
                         <div className="sample">
