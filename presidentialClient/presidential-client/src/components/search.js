@@ -13,7 +13,7 @@ class Search extends Component {
           .then(res =>{
             console.log(res);
             this.setState({
-              results: res.data
+              results: [res.data]
             })
           })
       }
@@ -23,7 +23,7 @@ class Search extends Component {
           .then(res =>{
             console.log(res);
             this.setState({
-              results: res.data
+              results: [res.data]
             })
           })
       }
@@ -33,7 +33,7 @@ class Search extends Component {
           .then(res =>{
             console.log(res);
             this.setState({
-              results: res.data
+              results: [res.data]
             })
           })
       }
@@ -43,7 +43,7 @@ class Search extends Component {
           .then(res =>{
             console.log(res);
             this.setState({
-              results: res.data
+              results: [res.data]
             })
           })
       }
@@ -53,7 +53,7 @@ class Search extends Component {
           .then(res =>{
             console.log(res);
             this.setState({
-              results: res.data
+              results: [res.data]
             })
           })
       }
@@ -63,26 +63,52 @@ class Search extends Component {
           .then(res =>{
             console.log(res);
             this.setState({
-              results: res.data
+              results: [res.data]
             })
           })
       }
 
-      myPresidents = this.state.results.map((president, i) => {
-          return (
-              <li key={i}>{president.name}</li>
-          )
-      })
-
       filterPres() {
           if(this.state.results != []) {
               return(
-                //   <div className="row">
-                //     <ul>{this.myPresidents}</ul>
-                //   </div>
                 this.state.results.map((president, i) => {
                     return (
-                        <li key={i}>{president.name}</li>
+                        <table className="table">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Name</th>                            
+                              <th>Term Start</th>
+                              <th>Term End</th>
+                              <th>Party</th>
+                              <th>Vice President</th>
+                              <th>Terms</th>
+                              <th>Born</th>
+                              <th>Died</th>
+                              <th>Prior Occupation</th>
+                              <th>Home State</th>
+                              <th>Birthplace</th>
+                              <th>Spouse(s)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th>{president.number}</th>
+                              <td>{president.name}</td>
+                              <td>{president.start}</td>
+                              <td>{president.end}</td>
+                              <td>{president.party}</td>
+                              <td>{president.vice}</td>
+                              <td>{president.terms}</td>
+                              <td>{president.born}</td>
+                              <td>{president.died}</td>
+                              <td>{president.prior}</td>
+                              <td>{president.state}</td>
+                              <td>{president.home}</td>
+                              <td>{president.spouse}</td>
+                            </tr>
+                          </tbody>
+                        </table>
                     )
                 })
               )
@@ -101,24 +127,15 @@ class Search extends Component {
                 </form>
 
                 <DropdownButton id="dropdown-basic-button" title="Get By">
-                    {/* <Dropdown.Item href={this.getByName(this.state.search)}>Name</Dropdown.Item> */}
+                    <Dropdown.Item onClick={(e) => this.getByName(this.state.search)}>Name</Dropdown.Item>
                     <Dropdown.Item onClick={(e) => this.getByNumber(this.state.search)}>Number</Dropdown.Item>
-                    {/* <Dropdown.Item href={this.getByParty(this.state.search)}>Party</Dropdown.Item>
-                    <Dropdown.Item href={this.getByTerms(this.state.search)}>Term</Dropdown.Item>
-                    <Dropdown.Item href={this.getByState(this.state.search)}>State</Dropdown.Item>
-                    <Dropdown.Item href={this.getByDeath(this.state.search)}>Death</Dropdown.Item> */}
+                    <Dropdown.Item onClick={(e) => this.getByParty(this.state.search)}>Party</Dropdown.Item>
+                    <Dropdown.Item onClick={(e) => this.getByTerms(this.state.search)}>Term</Dropdown.Item>
+                    <Dropdown.Item onClick={(e) => this.getByState(this.state.search)}>State</Dropdown.Item>
+                    <Dropdown.Item onClick={(e) => this.getByDeath(this.state.search)}>Death</Dropdown.Item>
                 </DropdownButton>
                 <div>
-                    {/* {
-                        this.state.results.map((president, i) => {
-                        return (
-                        <li key={i}>{president.name}</li>
-                        )
-                    })
-                    } */}
-                    {this.myPresidents}
                     {this.filterPres()}
-                    <p>Hello {this.state.results.name}</p>
                 </div>
             </div>
         )
