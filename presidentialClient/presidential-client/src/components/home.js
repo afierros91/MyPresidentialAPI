@@ -102,7 +102,7 @@ class Home extends Component {
                         </div>
                         <div className="col-sm-3 col-lg-3 col-md-3">
                             <h4 className="center">what is this</h4>
-                            <p>hello world alllah akbar</p>
+                            <p>hello world</p>
                             <p>goodbye world</p>
                         </div>
                         <div className="col-sm-1 col-lg-1 col-md-1"></div>
