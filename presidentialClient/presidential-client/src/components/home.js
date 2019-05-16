@@ -40,7 +40,7 @@ class Home extends Component {
         return (
             <div className="container-fluid">
 
-                <div className="row">
+                <div id="jumbo-row" className="row">
                     <div className="jumbotron">
                         <h1>Presidential API</h1>
                         <p className="lead">Data on the Presidents of the USA</p>
