@@ -7,13 +7,13 @@ class Home extends Component {
         result: [],
     }
 
-convert(){
-    let mySearch = this.state.search; {
-    if(this.state.search != "") {
-    return mySearch.toLowerCase();
+    convert() {
+        let mySearch = this.state.search; {
+            if (this.state.search != "") {
+                return mySearch.toLowerCase();
+            }
         }
     }
-}
 
     getPresident() {
         let lowerCased = this.convert();
