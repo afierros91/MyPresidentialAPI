@@ -7,29 +7,19 @@ class Home extends Component {
         result: [],
     }
 
-// convert(){
-    
-//     let B = this.state.search; {
-//     if(this.state.search = "") {
-//     return B.toLowerCase();
-//         }
-//     else console.log(B);
-//     }
 
-// // }
-// convert=()=>{
- 
-//     var A = this.state.search;
- 
-//     var B = A.toLowerCase() ;
-//     console.log(B);
-// //    return B
-
-   
+    convert() {
+        let mySearch = this.state.search; {
+            if (this.state.search != "") {
+                return mySearch.toLowerCase();
+            }
+        }
+    }
 
 
     getPresident() {
-        axios.get(`http://localhost:5000/presidents/${this.state.search}`)
+        let lowerCased = this.convert();
+        axios.get(`http://localhost:5000/presidents/${lowerCased}`)
           .then(res => {
                 this.setState({
                     result: res.data
@@ -39,8 +29,9 @@ class Home extends Component {
 
     presPortrait() {
         if(this.state.result != "") {
-            return(<div className="row">
-            <img id="presidential-portrait" src={this.state.result.portrait} className="rounded-circle mx-auto d-block" alt="" />
+            return(
+            <div className="row">
+                <img id="presidential-portrait" src={this.state.result.portrait} className="rounded-circle mx-auto d-block" alt="" />
             </div>);
         }
     }
@@ -63,9 +54,6 @@ class Home extends Component {
                     </i>
                 </div>
 
-                {/* <div className="row">
-                <img id="presidential-portrait" src={this.state.result.portrait} className="rounded-circle mx-auto d-block" alt="" />
-                </div> */}
                 {this.presPortrait()}
 
                 <div className="api-container">
@@ -120,7 +108,7 @@ class Home extends Component {
                         <div className="col-sm-1 col-lg-1 col-md-1"></div>
                     </div>
                     
-            </div>
+            </div> 
         )
     }
 }

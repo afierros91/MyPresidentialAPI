@@ -28,66 +28,6 @@ class App extends Component {
       })
   }
 
-  getByName= (name) => {
-    axios.get(`http://localhost:5000/presidents/name/${name}`)
-      .then(res =>{
-        console.log(res);
-        this.setState({
-          searchResult: res.data
-        })
-      })
-  }
-
-  getByNumber= (number) => {
-    axios.get(`http://localhost:5000/presidents/number/${number}`)
-      .then(res =>{
-        console.log(res);
-        this.setState({
-          searchResult: res.data
-        })
-      })
-  }
-
-  getByParty= (party) => {
-    axios.get(`http://localhost:5000/presidents/party/${party}`)
-      .then(res =>{
-        console.log(res);
-        this.setState({
-          searchResult: res.data
-        })
-      })
-  }
-
-  getByTerms= (term) => {
-    axios.get(`http://localhost:5000/presidents/term/${term}`)
-      .then(res =>{
-        console.log(res);
-        this.setState({
-          searchResult: res.data
-        })
-      })
-  }
-
-  getByState= (state) => {
-    axios.get(`http://localhost:5000/presidents/state/${state}`)
-      .then(res =>{
-        console.log(res);
-        this.setState({
-          searchResult: res.data
-        })
-      })
-  }
-
-  getByDeath= (death) => {
-    axios.get(`http://localhost:5000/presidents/death/${death}`)
-      .then(res =>{
-        console.log(res);
-        this.setState({
-          searchResult: res.data
-        })
-      })
-  }
-
   render() {
     return (
       <div className="App">
@@ -99,12 +39,6 @@ class App extends Component {
             <Route exact path='/search' render={() => <Search 
             presidents={this.state.presidents}
             searchResult={this.state.searchResult}
-            // getByName={this.getByName}
-            // getByNumber={this.getByNumber}
-            // getByParty={this.getByParty}
-            // getByTerms={this.getByTerms}
-            // getByState={this.getByState}
-            // getByDeath={this.getByDeath}
             />}></Route>
           </Switch>
         </div>
