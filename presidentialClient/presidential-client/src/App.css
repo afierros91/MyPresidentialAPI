@@ -55,6 +55,8 @@ justify-content: center;
 #nav-container {
     background: #2c2b2a;
     font-family: 'Playfair Display SC', serif;
+    min-width: 100vw;
+    text-align: center;
 }
 
 #filter-container {

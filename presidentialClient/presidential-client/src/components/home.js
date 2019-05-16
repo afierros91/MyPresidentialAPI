@@ -7,6 +7,7 @@ class Home extends Component {
         result: [],
     }
 
+
     convert() {
         let mySearch = this.state.search; {
             if (this.state.search != "") {
@@ -14,6 +15,7 @@ class Home extends Component {
             }
         }
     }
+
 
     getPresident() {
         let lowerCased = this.convert();
@@ -64,7 +66,7 @@ class Home extends Component {
                             <span>http://localhost:5000/presidents/</span>
                             <input type="text"  placeholder="number/1/"
                                 onChange={(e) => this.setState({ search: e.target.value })} />
-                                <button onClick={(e) => { this.convert(e); this.getPresident(e);}} >Search</button>
+                                <button onClick={(e) =>  this.getPresident(e)} >Search</button>
                         </div>
 
                         <div className="sample">
