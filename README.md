@@ -10,7 +10,7 @@
 * 3. Creating a database or presidential information. 
 * Set up client side in React by adding the following features:
 * 1. A Home page with a search bar that performs and API call for individual Presidents. 
-* 2. A search page that uses HTTP requests to filter through all presidential data and returns the relevant Presidents. 
+* 2. A Search page that uses HTTP requests to filter through all presidential data and returns the relevant Presidents. 
 
 ## Technologies Used
 * React
