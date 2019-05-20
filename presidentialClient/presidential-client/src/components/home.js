@@ -97,13 +97,13 @@ class Home extends Component {
                         </div>
                         <div className="col-sm-3 col-lg-3 col-md-3">
                             <h4 className="center">How to make a call:</h4>
-                            <p>Listen in on this port: </p>
-                            <p>And then get a computer science doctorate</p>
+                            <p>Data will be available for use once this is deployed. </p>
+                            <p>Lorem ipsum dolor sit amet</p>
                         </div>
                         <div className="col-sm-3 col-lg-3 col-md-3">
-                            <h4 className="center">what is this</h4>
-                            <p>hello world</p>
-                            <p>goodbye world</p>
+                            <h4 className="center">Contribute or support</h4>
+                            <p>Reach out to us for any suggestions through e-mail, or contribute on GitHub.</p>
+                            <p>Donations accepted.</p>
                         </div>
                         <div className="col-sm-1 col-lg-1 col-md-1"></div>
                     </div>
