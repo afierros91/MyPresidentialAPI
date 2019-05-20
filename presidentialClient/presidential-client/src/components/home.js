@@ -38,7 +38,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="flex-container container-fluid">
 
                 <div id="jumbo-row" className="row">
                     <div className="jumbotron">
